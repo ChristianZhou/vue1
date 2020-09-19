@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<div id="app">
+    <div>{{message}}</div>
+    <div>{{reverseMessage}}</div>
+    <div>{{reverseMessage1()}}</div>
+
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: "hello boy！"
+        },
+        methods: {
+            reverseMessage1(){
+                console.log('methods')
+                return this.message.split('').reverse().join('');
+            }
+        },
+        computed: {
+            reverseMessage: {
+                get(){
+                    console.log('computed');
+                    return this.message.split('').reverse().join('');
+                },
+                set(newVal){
+                    console.log('set compute：' + newVal)
+                    this.message = newVal
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

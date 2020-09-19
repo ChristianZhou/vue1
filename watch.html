@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<div id="app">
+    <div>{{fullName}}</div>
+</div>
+<script>
+    let app = new Vue({
+        el: '#app',
+        data: {
+            firstName: 'Christian',
+            lastName: "Zhou",
+            fullName: "Christian Zhou"
+        },
+        watch: {
+            firstName(val) {
+                console.log( 'firstName changed : ' + val)
+            },
+            lastName(val) {
+                console.log( 'lastName changed : ' + val)
+            }
+        }
+    });
+</script>
+</body>
+</html>

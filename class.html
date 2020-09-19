@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<div id="app">
+    <div v-bind:class="styleObj">{{msg}}</div>
+</div>
+<script>
+    let app = new Vue({
+        el: '#app',
+        data: {
+            msg:'Hello Java boy!',
+            styleObj: {
+                myDiv1:true,
+                myDiv2:true,
+                myDiv3:true,
+            }
+        },
+        watch: {
+            firstName(val) {
+                console.log( 'firstName changed : ' + val)
+            },
+            lastName(val) {
+                console.log( 'lastName changed : ' + val)
+            }
+        }
+    });
+</script>
+<style>
+    .myDiv1 {
+        font-weight: bold;
+        color: #ff0000;
+    }
+    .myDiv2 {
+        font-weight: bold;
+        color: #0073ff;
+    }
+    .myDiv3 {
+        font-weight: bold;
+        color: #1aff00;
+    }
+</style>
+</body>
+</html>
